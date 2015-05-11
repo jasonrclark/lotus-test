@@ -1,0 +1,18 @@
+common: &default_settings
+  license_key: <% $stderr.puts "***Fill in your license key in config/newrelic.yml***" %>
+  app_name: lotus
+  log_level: debug
+
+development:
+  <<: *default_settings
+  developer_mode: true
+
+test:
+  <<: *default_settings
+  monitor_mode: false
+
+staging:
+  <<: *default_settings
+
+production:
+  <<: *default_settings
